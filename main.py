@@ -4,6 +4,8 @@
 # Author: Ricardo Dimas
 ##################################
 
+import sys
+
 def sum(a, b):
     print(int(a) + int(b))
 
@@ -15,10 +17,6 @@ def mult(a, b):
 
 def div(a, b):
     print(int(a) / int(b))
-
-#def basic_text():
-#    a = input('Type in the first number: ')
-#    b = input('Type in the second number: ')
 
 def main():
     print('Welcome to Basik-Calc\n')
@@ -32,6 +30,7 @@ def main():
         a = input('Type in the first number: ')
         b = input('Type in the second number: ')
         sum(a, b)
+
 
     if int(operation) == 2:
         a = input('Type in the first number: ')
@@ -49,5 +48,9 @@ def main():
         div(a, b)
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print('\nExiting...')
+        sys.exit()
 
